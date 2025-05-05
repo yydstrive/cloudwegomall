@@ -2,7 +2,7 @@ package mysql
 
 import (
 	"github.com/yydstrive/cloudwegomall/demo/demo_proto/conf"
-
+	"github.com/yydstrive/cloudwegomall/demo/demo_proto/biz/model"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 	"fmt"
@@ -34,5 +34,6 @@ func Init() {
 	if err != nil {
 		panic(err)
 	}
+	DB.AutoMigrate(&model.User{})
 	fmt.Println(v)
 }
